@@ -66,6 +66,7 @@ export async function bakeGif(
 
   return await new Promise<Blob>((resolve, reject) => {
     encoder.on('finished', (blob: Blob) => resolve(blob))
+    encoder.on('error', (err) => reject(err))
     try {
       encoder.render()
     } catch (err) {

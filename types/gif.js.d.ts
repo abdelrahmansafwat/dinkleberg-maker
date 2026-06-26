@@ -14,6 +14,7 @@ declare module 'gif.js' {
     on(event: 'finished', cb: (blob: Blob) => void): void
     on(event: 'abort' | 'start', cb: () => void): void
     on(event: 'progress', cb: (p: number) => void): void
+    on(event: 'error', cb: (err: unknown) => void): void
     render(): void
   }
 }
