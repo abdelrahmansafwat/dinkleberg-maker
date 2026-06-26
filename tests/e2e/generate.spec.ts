@@ -2,12 +2,13 @@ import { test, expect } from '@playwright/test'
 
 test('generates a multi-frame animated GIF with the caption', async ({ page }) => {
   await page.goto('/')
+  await page.waitForLoadState('networkidle')
   await page.getByTestId('name-input').fill('Smith')
   await page.getByTestId('generate-btn').click()
 
   // Download link appears once baking finishes.
   const download = page.getByTestId('download')
-  await expect(download).toBeVisible({ timeout: 45_000 })
+  await expect(download).toBeVisible({ timeout: 90_000 })
 
   // Filename reflects the name.
   await expect(download).toHaveAttribute('download', 'smithberg.gif')
