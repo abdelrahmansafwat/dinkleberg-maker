@@ -71,7 +71,7 @@ async function generate() {
 
     <p v-if="error" class="error">{{ error }}</p>
 
-    <img data-testid="preview" class="preview" :src="previewUrl" alt="Dinkleberg meme preview" />
+    <img v-if="!error" data-testid="preview" class="preview" :src="previewUrl" alt="Dinkleberg meme preview" />
 
     <a
       v-if="downloadUrl"

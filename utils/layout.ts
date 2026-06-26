@@ -19,6 +19,11 @@ export function layoutCaption(
     }
   }
 
+  // Ensure minFontSize itself is tried even when the step skipped it.
+  if (measure(text, minFontSize) <= maxWidth) {
+    return { fontSize: minFontSize, lines: [text] }
+  }
+
   // Could not fit on one line; greedily wrap at minFontSize.
   const words = text.split(/\s+/).filter(Boolean)
   const lines: string[] = []
