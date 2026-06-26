@@ -1,9 +1,12 @@
 import { writeFile, mkdir, copyFile, access } from 'node:fs/promises'
 import { dirname } from 'node:path'
 
+// Textless ("clean") Dinkleberg growl scene — no caption is baked into these
+// frames, so the app draws the {NAME}BERG!! caption itself without stacking
+// text over text.
 const SOURCE_GIF_URL =
   process.env.SOURCE_GIF_URL ||
-  'https://media1.tenor.com/m/CHW07v-9jvwAAAAd/fairlyoddparents-dinkleberg.gif'
+  'https://media1.tenor.com/m/h4W9k8KuArgAAAAd/dinkleberg-fairly-odd-parents.gif'
 const FONT_URL =
   process.env.FONT_URL ||
   'https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf'

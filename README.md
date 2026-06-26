@@ -1,7 +1,8 @@
 # Dinkleberg Maker
 
-Type a name, get a downloadable Dinkleberg meme GIF — `{NAME}BERG...` baked onto
-the classic *Fairly OddParents* GIF, entirely in the browser.
+Type a name, get a downloadable Dinkleberg meme GIF — `{NAME}BERG!!` baked onto
+a clean (caption-free) clip of the classic *Fairly OddParents* "Dinkleberg"
+growl, styled to match the original burned-in text, entirely in the browser.
 
 ## Setup
 
@@ -13,7 +14,7 @@ npm run dev     # http://localhost:3000
 
 ## How it works
 
-- `utils/caption.ts` — turns a name into the caption (`Smith` → `SMITHBERG...`).
+- `utils/caption.ts` — turns a name into the caption (`Smith` → `SMITHBERG!!`).
 - `utils/layout.ts` — picks font size / line wrapping to fit the GIF width.
 - `utils/gif-baker.ts` — decodes the GIF (`gifuct-js`), draws each frame + caption
   on a canvas, re-encodes (`gif.js`) — all client-side.

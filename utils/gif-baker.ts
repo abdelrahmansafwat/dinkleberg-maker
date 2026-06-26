@@ -82,15 +82,15 @@ function drawCaption(
   height: number,
   fontFamily: string
 ): void {
-  const margin = Math.round(width * 0.06)
+  const margin = Math.round(width * 0.045)
   const maxWidth = width - margin * 2
   const measure = (t: string, size: number) => {
     ctx.font = `${size}px ${fontFamily}`
     return ctx.measureText(t).width
   }
   const { fontSize, lines } = layoutCaption(text, maxWidth, measure, {
-    maxFontSize: Math.round(height * 0.18),
-    minFontSize: Math.round(height * 0.06),
+    maxFontSize: Math.round(height * 0.3),
+    minFontSize: Math.round(height * 0.12),
     maxLines: 2,
   })
 
@@ -98,12 +98,13 @@ function drawCaption(
   ctx.textAlign = 'center'
   ctx.textBaseline = 'alphabetic'
   ctx.lineJoin = 'round'
-  ctx.lineWidth = Math.max(2, Math.round(fontSize * 0.12))
+  ctx.lineWidth = Math.max(2, Math.round(fontSize * 0.14))
   ctx.strokeStyle = 'black'
   ctx.fillStyle = 'white'
 
   const lineHeight = fontSize * 1.1
-  const bottom = height - margin
+  // Sit the caption low, near the bottom edge, like the original baked-in text.
+  const bottom = height - Math.round(height * 0.04)
   // Stack lines upward from the bottom margin.
   lines.forEach((line, i) => {
     const y = bottom - (lines.length - 1 - i) * lineHeight
