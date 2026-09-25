@@ -11,7 +11,7 @@
     "test:e2e": "playwright test"
   },
   "license": "ISC",
-"dependencies": {
+  "dependencies": {
     "gif.js": "^0.2.0",
     "gifuct-js": "^2.1.2",
     "nuxt": "^3.21.8"

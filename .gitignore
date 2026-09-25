@@ -2,3 +2,12 @@ node_modules/
 .nuxt/
 .output/
 dist/
+test-results/
+playwright-report/
+.playwright-mcp/
+.superpowers/
+
+# fetched by `npm run setup`
+public/dinkleberg.gif
+public/fonts/
+public/vendor/
